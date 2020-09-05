@@ -1,3 +1,9 @@
+console.log("Hello World, i Know how to count);
+
+[1,2,3,4].forEach(n=>console.log(n));
+
+
+
 var boys = ["Peter", "lars", "Ole"];
 var girls = ["Janne", "hanne", "Sanne"];
 var all=boys.concat(girls);
