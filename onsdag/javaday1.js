@@ -133,4 +133,17 @@ msgPrinter ("eeeeeeeeee",1000);
 //0
 console.log("ffffffffff");
 
+//1 this and constructor functions
+function Person(name){
+  this.name = name;
+  console.log("Name: "+ this.name);
+  setTimeout(function(){
+    console.log("Hi  "+this.name);  //it can see the name from inside the method
+  },2000);
+}
+console.log(Person("matti"))
+
+//That was silly. How do we use a function starting with a capitalized letter?, and what do we call such a function?
+//constructer function
+
 
