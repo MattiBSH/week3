@@ -146,4 +146,6 @@ console.log(Person("matti"))
 //That was silly. How do we use a function starting with a capitalized letter?, and what do we call such a function?
 //constructer function
 
+var p = new Person("Kurt Wonnegut");  //Create an instance using the constructor function
+console.log("I'm global: "+ name);  //What’s different ?
 
