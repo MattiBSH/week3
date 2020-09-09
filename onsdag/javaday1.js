@@ -83,7 +83,7 @@ var uppercase1 = res.map(x => x.toUpperCase() );
 
 //3
 var str = '<ul>'
-var sql=res.map(x => "<li>"+x+"<li>" );
+var str=res.map(x => "<li>"+x+"<li>" );
 str += '</ul>';
 
 
