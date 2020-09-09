@@ -1,5 +1,5 @@
 
-
+//det her er opgave 1
 var boys = ["Peter", "lars", "Ole"];
 var girls = ["Janne", "hanne", "Sanne"];
 var all=boys.concat(girls);
