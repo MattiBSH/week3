@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <input type="text" id="text1"><br>
+    GetAll
+    <input type="submit" id="submit1" onclick="getall()"><br>GetByID
+    <input type="submit" id="submit2" onclick="getByID()">
+
+    <table id="table1">
+
+    </table>
+    <table id="table2">
+
+    </table>
+    <script>
+
+        var url = "https://jsonplaceholder.typicode.com/users"
+        var table1 = document.getElementById("table1");
+
+        function getall() {
+            fetch(url)
+                .then(res => res.json())
+                .then(persons => {
+
+                    var lis = persons.map((p) => {
+
+                        line = "<tr><th>" + p.name + "</th>" + "<th>" + p.phone + "</th></tr>"
+                        return line;
+                    })
+                    var str1 = "<tr><th>Name</th><th>Phone</th></tr>";
+                    console.log(str1);
+                    document.getElementById("table1").innerHTML = str1 + lis.join("");
+                    console.log(lis);
+                })
+        }
+
+        function getByID() {
+            fetch(url)
+                .then(res => res.json()) //in flow1, just do it
+                .then(data => {
+                    var nr=document.getElementById("text1").value;
+                    document.getElementById("table2").innerText=("data", data[nr].name+" nr: "+data[nr].phone);
+                   
+                console.log(data[nr].phone);
+            });
+                
+                
+        }
+    </script>
+
+
+</body>
+
+</html>

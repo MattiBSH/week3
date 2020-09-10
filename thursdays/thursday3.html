@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <style>
+        input {
+            padding: 1%;
+            font-size: medium;
+        }
+    </style>
+</head>
+
+<body>
+
+    
+    <form>
+        <ul id="ul1">
+
+        </ul>
+        <input id="input1" type="text"/>
+        <input type="submit" id="submit1"/>
+        <br>
+        Remove First <input type="submit" id="removeFirst1"/>
+        <br>
+        Remove Last <input type="submit" id="removeLast1"/>
+    </form>
+    <script>
+        //Making array
+        var array1 = ["Lars", "Jan", "Peter", "Bo", "Frederik"];
+        var lis = array1.map(x => "<li>" + x + "</li>");
+        document.getElementById("ul1").innerHTML = lis.join("");
+        //making add function
+        var submit=document.getElementById("submit1");
+        submit.onclick=addLi;
+
+
+        function addLi(e){
+            e.preventDefault();
+            var val=document.getElementById("input1").value;
+            lis.unshift("<li>"+val+"</li>");
+            document.getElementById("ul1").innerHTML = lis.join("");
+            console.log(val);
+        }
+
+//making remove first
+        var remove1=document.getElementById("removeFirst1");
+        remove1.onclick=removeFirst;
+
+        function removeFirst(e){
+            e.preventDefault();
+            lis.shift();
+            console.log(lis);
+            document.getElementById("ul1").innerHTML = lis.join("");
+        }
+
+//remove Last
+       
+        var remove2=document.getElementById("removeLast1");
+        remove2.onclick=removeLast;
+        function removeLast(e){
+            e.preventDefault();
+            lis.pop();
+            document.getElementById("ul1").innerHTML = lis.join("");
+
+        }
+
+        
+    </script>
+</body>
+
+</html>

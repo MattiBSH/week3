@@ -1,0 +1,72 @@
+<html>
+
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 4px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        p{
+            font-size: medium;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Table Stuff</h1>
+    <h1>The UnFiltered<h1>
+    <table id="tablediv1">
+
+    </table>
+    <button onclick="makeTable()">click me for table</button><br>
+
+    <h1>The Filtered<h1>
+        
+    <table id="newFil1">
+
+    </table>
+    <p>Click me for table with price less than<p><br><input type="text" id="setPrice"><input type="submit" onclick="getByPrice()">
+    </button>
+    <script>
+        var cars = [
+            { id: 1, year: 1997, make: 'Ford', model: 'E350', price: 3000 },
+            { id: 2, year: 1999, make: 'Chevy', model: 'Venture', price: 4900 },
+            { id: 3, year: 2000, make: 'Chevy', model: 'Venture', price: 5000 },
+            { id: 4, year: 1996, make: 'Jeep', model: 'Grand Cherokee', price: 4799 },
+            { id: 5, year: 2005, make: 'Volvo', model: 'V70', price: 44799 }
+        ];
+        var magicString = "<tr><th>ID</th><th>Year<th>Model</th><th>Make</th><th>Price<th></th>";
+
+        function getByPrice() {
+            price1 = document.getElementById("setPrice").value;
+            var newFil = cars.filter(function (car) {
+                return car.price <= price1;
+            });
+            var filted=newFil.map(car => "<tr><th>" + car.id + "</th>" + "<th>" + car.year + "</th>" + "<th>" + car.model + "</th>" + "<th>" + car.make + "</th>" + "<th>" + car.price + "</th></tr>");
+            
+            document.getElementById("newFil1").innerHTML = magicString + filted.join("");
+        }
+        function makeTable() {
+
+
+            var totable = cars.map(car => "<tr><th>" + car.id + "</th>" + "<th>" + car.year + "</th>" + "<th>" + car.model + "</th>" + "<th>" + car.make + "</th>" + "<th>" + car.price + "</th></tr>");
+            var totablejoined = totable.join("");
+            var tablefromscript = document.getElementById("tablediv1").innerHTML = magicString + totablejoined;
+
+        }
+    </script>
+</body>
+
+</html>

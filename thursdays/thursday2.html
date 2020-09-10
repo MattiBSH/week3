@@ -1,0 +1,77 @@
+<html>
+
+<head>
+
+    <style>
+        .mydiv {
+            width: 25px;
+            height: 25px;
+            background-color: yellow;
+            margin: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Event bubbling</h1>
+
+    <div id="mydiv" class="mydiv">
+        <h1 id="hey1"></h1>
+        <button onclick="hi()">click me</button>
+
+    </div>
+    <br>
+    <div id="mydiv" class="mydiv">
+        <button onclick="hi2()">click me</button>
+        <h1 id="hey2"></h1>
+    </div>
+
+    <br><br><br>
+    <div id="outer">
+        <div id="mydiv1">div1
+        </div>
+        <div id="mydiv2">div2
+        </div>
+        <br>
+        <div id="mydiv3">div3
+        </div>
+        <div id="mydiv4">div4
+
+        </div>
+        <br>
+        <div id="mydiv5">div5
+        </div>
+        <div id="mydiv6">div6
+
+        </div>
+        <br>
+        <div id="mydiv7">div7
+        </div>
+        <div id="mydiv8">div8
+        </div>
+        <div id="mydiv9">div9
+        </div>
+        <div id="mydiv10">div10
+        </div>
+    </div>
+    <p id="writtentothis"></p>
+    <script>
+        function hi() {
+            console.log("hey from hey1");
+
+        }
+        function hi2() {
+            console.log("hey from hey2")
+        }
+        
+        var outer = document.getElementById("outer");
+        outer.onclick = function (e) {
+            var me = this;
+            var target = e.target;
+            console.log(me.id);
+            console.log(target.id);
+        }
+    </script>
+</body>
+
+</html>
