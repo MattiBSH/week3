@@ -99,14 +99,9 @@ var cars = [
 ];
 
 var newFil = cars.filter(function (car) {
-//    Cars newer than 1999
-//    Al  Volvo’s
-//    All cars with a price below 5000
-    return car.price <= 1000 &&
-        car.year > 1999 &&
-        car.model ==="Volvo" &&
-        car.price < 5000;
+    return car.price <= 5000;
 });
+
 console.log(newFil);
 
 //4a
