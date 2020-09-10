@@ -99,6 +99,14 @@ var cars = [
 ];
 
 var newFil = cars.filter(function (car) {
+    return car.year <= 1999;
+});
+
+var newFil = cars.filter(function (car) {
+    return car.make = "volvo";
+});
+
+var newFil = cars.filter(function (car) {
     return car.price <= 5000;
 });
 
