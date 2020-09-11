@@ -19,5 +19,8 @@ console.log(uppercase1);
 const filterItems = (arr, query) => {
   return arr.filter(el => el.toLowerCase().indexOf(query.toLowerCase()) !== -1)
 }
-console.log(filterItems(all, 'il'))
+console.log(filterItems(all, 'l'))
 
+var filterItemsI = (arr, query) => {
+return arr.filter(el => el.toLowerCase().indexOf(query) !== -1)};
+console.log(filterItems(all, 'i'))
